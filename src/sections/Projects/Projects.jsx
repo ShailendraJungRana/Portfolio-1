@@ -1,7 +1,7 @@
 import styles from './ProjectsStyles.module.css';
 import CJ from '../../assets/theCJ.png';
-import freshBurger from '../../assets/fresh-burger.png';
-import hipsster from '../../assets/hipsster.png';
+import Hotel from '../../assets/hotel.jpg'
+import Mini from '../../assets/mini.jpg';
 import fitLift from '../../assets/fitlift.png';
 import Learning from '../../assets/Learning.png';
 import ProjectCard from '../../common/ProjectCard';
@@ -33,22 +33,23 @@ function Projects() {
         </div>
         <div>
         <ProjectCard
-          src={hipsster}
-          h3="Hipsster"
-          p="Glasses Shop"
+          src={Hotel}
+
+          h3="Hotel Site"
+          p="Using API(landing page)"
         />
-        <a href='https://ecommerce-web-snowy-beta.vercel.app/' target="_blank"><button >View</button></a>
-        <a href='https://github.com/ShailendraJungRana/Ecommerce-Web' target="_blank"><button >Code</button></a>
+        <a href='https://hotel-site-gray.vercel.app/' target="_blank"><button >View</button></a>
+        <a href='https://github.com/ShailendraJungRana/Hotel-Site' target="_blank"><button >Code</button></a>
         </div>
         <div>
         <ProjectCard
-          src={fitLift}
-          h3="FitLift"
-          p="Fitness App"
+          src={Mini}
+          h3="Mini Projects"
+          p="5 Mini Projects"
+          style={{ width: '200px', height: '150px' }} 
         />
-         <a href='https://ecommerce-web-snowy-beta.vercel.app/' target="_blank"><button >View</button></a>
-        <a href='https://github.com/ShailendraJungRana/Ecommerce-Web' target="_blank"><button >Code</button></a>
-        </div>v
+        <a href='https://github.com/ShailendraJungRana/5-mini-project' target="_blank"><button >Code</button></a>
+        </div>
       </div>
     </section>
   );
