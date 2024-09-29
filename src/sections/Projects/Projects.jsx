@@ -24,7 +24,6 @@ function Projects() {
         <div>
         <ProjectCard
           src={Learning}
-          
           h3="Learning"
           p="Learning-platform"
         />
