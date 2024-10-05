@@ -15,12 +15,13 @@ function Skills() {
         <SkillList src={checkMarkIcon} skill="HTML" />
         <SkillList src={checkMarkIcon} skill="CSS" />
         <SkillList src={checkMarkIcon} skill="JavaScript" />
-        <SkillList src={checkMarkIcon} skill="Figma" />
+        <SkillList src={checkMarkIcon} skill="React" />
+        
     
       </div>
       <hr />
       <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="React" />
+        <SkillList src={checkMarkIcon} skill="NextJS" />
         <SkillList src={checkMarkIcon} skill="Tailwind CSS" />
         <SkillList src={checkMarkIcon} skill="Framer-Motion" />
         <SkillList src={checkMarkIcon} skill="Material UI" />
@@ -28,8 +29,10 @@ function Skills() {
       <hr />
       <div className={styles.skillList}>
         <SkillList src={checkMarkIcon} skill="GitHub" />
+        <SkillList src={checkMarkIcon} skill="Figma" />
         <SkillList src={checkMarkIcon} skill="DaVinci Resolve" />
         <SkillList src={checkMarkIcon} skill="Affinity Designer" />
+
         
       </div>
     </section>

@@ -2,7 +2,6 @@ import styles from './ProjectsStyles.module.css';
 import CJ from '../../assets/theCJ.png';
 import Hotel from '../../assets/hotel.jpg'
 import Mini from '../../assets/mini.jpg';
-import fitLift from '../../assets/fitlift.png';
 import Learning from '../../assets/Learning.png';
 import ProjectCard from '../../common/ProjectCard';
 
@@ -33,7 +32,7 @@ function Projects() {
         <div>
         <ProjectCard
           src={Hotel}
-
+        
           h3="Hotel Site"
           p="Using API(landing page)"
         />
