@@ -7,10 +7,8 @@ import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
 import linkedinDark from '../../assets/linkedin-dark.svg';
-import CV from '../../assets/cv1.pdf';
+import resume from '../../assets/Shailendra.pdf'
 import { useTheme } from '../../common/ThemeContext';
-import Behance from '../../assets/Behance.png'
-import Instagram from '../../assets/instagram.png'
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
@@ -51,17 +49,11 @@ function Hero() {
           <a href="https://www.linkedin.com/in/shailendra-jung-rana-aa78781a1/" target="_blank">
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
-          <a href="https://www.behance.net/arunjungrana" target="_blank">
-            <img src={Behance} alt="Behance icon" />
-          </a>
-          <a href="https://www.instagram.com/arun.jr_111/" target="_blank">
-            <img src={Instagram} alt="Instagram icon" />
-          </a>
         </span>
         <p className={styles.description}>
         A passionate aspiring DevOps engineer focused on learning and building scalable, automated, and efficient systems.
         </p>
-        <a href={CV} download>
+        <a href={resume} download>
           <button className="hover">Resume</button>
         </a>
       </div>
