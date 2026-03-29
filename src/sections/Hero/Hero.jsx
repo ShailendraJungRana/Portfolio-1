@@ -41,9 +41,8 @@ function Hero() {
           <br />
           Jung Rana
         </h1>
-        <h2>Frontend Developer 
+        <h2>DevOps Engineer 
           <br />
-          UI/UX Designer
         </h2>
         <span>
           <a href="https://github.com/ShailendraJungRana" target="_blank">
@@ -60,7 +59,7 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-        A passionate frontend developer and UI/UX designer focused on developing  web apps.
+        A passionate aspiring DevOps engineer focused on learning and building scalable, automated, and efficient systems.
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>

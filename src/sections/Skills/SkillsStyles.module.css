@@ -1,47 +1,218 @@
+/* ─── Container ─────────────────────────────────────────── */
 .container {
+  padding: 80px 40px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  overflow: hidden;
+}
+
+/* ─── Theme Tokens ───────────────────────────────────────── */
+.light {
+  --bg: #f4f1eb;
+  --text-primary: #111111;
+  --text-muted: #888;
+  --chip-bg: #111111;
+  --chip-text: #f4f1eb;
+  --chip-border: #111111;
+  --chip-hover-bg: #f4f1eb;
+  --chip-hover-text: #111111;
+  --label-color: #888;
+  --divider: #c8c4bb;
+  --eyebrow-color: #888;
+  --marquee-text: #bbb;
+}
+
+.dark {
+  --bg: #0e0e0e;
+  --text-primary: #f0ece4;
+  --text-muted: #666;
+  --chip-bg: #f0ece4;
+  --chip-text: #0e0e0e;
+  --chip-border: #f0ece4;
+  --chip-hover-bg: #0e0e0e;
+  --chip-hover-text: #f0ece4;
+  --label-color: #555;
+  --divider: #2a2a2a;
+  --eyebrow-color: #555;
+  --marquee-text: #2e2e2e;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.header {
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--eyebrow-color);
+  margin-bottom: 10px;
+  animation: fadeUp 0.5s ease both;
+}
+
+.title {
+  font-family: 'DM Serif Display', 'Georgia', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.02em;
+  animation: fadeUp 0.55s 0.05s ease both;
+}
+
+/* ─── Grid ───────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--divider);
+}
+
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Category Column ────────────────────────────────────── */
+.category {
+  padding: 32px 28px 36px 0;
+  border-right: 1px solid var(--divider);
+  animation: fadeUp 0.6s calc(var(--cat-index) * 0.08s + 0.1s) ease both;
+}
+
+.category:last-child {
+  border-right: none;
+  padding-left: 28px;
+  padding-right: 0;
+}
+
+.category:not(:first-child):not(:last-child) {
+  padding-left: 28px;
+}
+
+@media (max-width: 680px) {
+  .category {
+    border-right: none;
+    border-bottom: 1px solid var(--divider);
+    padding: 24px 0;
+  }
+  .category:last-child {
+    padding-left: 0;
+    border-bottom: none;
+  }
+  .category:not(:first-child):not(:last-child) {
+    padding-left: 0;
+  }
+}
+
+/* ─── Category Label ─────────────────────────────────────── */
+.categoryLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--label-color);
+  margin: 0 0 20px 0;
+}
+
+/* ─── Chip List ──────────────────────────────────────────── */
+.chipList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  gap: 10px;
+}
 
-  span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+/* ─── Chip ───────────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  animation: fadeUp 0.5s calc(var(--skill-index) * 0.06s + 0.2s) ease both;
+}
+
+.chipInner {
+  position: relative;
+  display: inline-block;
+  padding: 7px 16px;
+  font-size: 0.78rem;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  letter-spacing: 0.04em;
+  color: var(--chip-text);
+  background: var(--chip-bg);
+  border: 1.5px solid var(--chip-border);
+  cursor: default;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  /* Slightly clipped corner for a geometric feel */
+  clip-path: polygon(
+    0 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
+}
+
+.chipInner:hover {
+  background: var(--chip-hover-bg);
+  color: var(--chip-hover-text);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--chip-border);
+}
+
+/* ─── Marquee ────────────────────────────────────────────── */
+.marqueeTrack {
+  margin-top: 56px;
+  border-top: 1px solid var(--divider);
+  padding-top: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marqueeContent {
+  display: inline-flex;
+  animation: marquee 28s linear infinite;
+}
+
+.marqueeItem {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--marquee-text);
+  margin-right: 8px;
+}
+
+.marqueeDiv {
+  margin: 0 8px;
+  color: var(--marquee-text);
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
-
-  img {
-    width: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.skillList {
-  display: flex;
-  justify-content: space-evenly;
-  align-self: center;
-  flex-wrap: wrap;
-  row-gap: 40px;
-  max-width: 26ch;
-}
-
-hr {
-  width: 100px;
-  height: 1px;
-  border: none;
-  background-color: var(--text-color);
-  margin: 30px auto;
-}
-
-@media (width >= 800px) {
-  .skillList {
-    max-width: fit-content;
-    gap: 30px;
-
-    p {
-      font-size: 20px;
-    }
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
   }
-
-  hr {
-    width: 300px;
+  to {
+    transform: translateX(-50%);
   }
 }
