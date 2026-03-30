@@ -1,10 +1,28 @@
+/* ─── Global Fix ─────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
 /* ─── Container ─────────────────────────────────────────── */
 .container {
-  padding: 80px 40px 60px;
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  font-family: 'DM Mono', 'Courier New', monospace;
+  padding: 80px 24px 60px;
+  font-family: "DM Mono", "Courier New", monospace;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 16px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 50px 12px 30px;
+  }
 }
 
 /* ─── Theme Tokens ───────────────────────────────────────── */
@@ -41,6 +59,7 @@
 /* ─── Header ─────────────────────────────────────────────── */
 .header {
   margin-bottom: 56px;
+  text-align: center;
 }
 
 .eyebrow {
@@ -54,8 +73,8 @@
 }
 
 .title {
-  font-family: 'DM Serif Display', 'Georgia', serif;
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-family: "DM Serif Display", "Georgia", serif;
+  font-size: clamp(2.2rem, 8vw, 5rem);
   font-weight: 400;
   color: var(--text-primary);
   line-height: 1;
@@ -68,45 +87,55 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
   border-top: 1px solid var(--divider);
+  width: 100%;
 }
 
-@media (max-width: 680px) {
+/* Tablet */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (STACK) */
+@media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ─── Category Column ────────────────────────────────────── */
+/* ─── Category ───────────────────────────────────────────── */
 .category {
-  padding: 32px 28px 36px 0;
+  width: 100%;
+  padding: 28px 16px;
   border-right: 1px solid var(--divider);
   animation: fadeUp 0.6s calc(var(--cat-index) * 0.08s + 0.1s) ease both;
+  text-align: center;
 }
 
-.category:last-child {
+/* Desktop: remove last column border */
+.category:nth-child(3n) {
   border-right: none;
-  padding-left: 28px;
-  padding-right: 0;
 }
 
-.category:not(:first-child):not(:last-child) {
-  padding-left: 28px;
+/* Tablet: fix border */
+@media (max-width: 900px) {
+  .category:nth-child(2n) {
+    border-right: none;
+  }
 }
 
-@media (max-width: 680px) {
+/* Mobile STACK */
+@media (max-width: 600px) {
   .category {
     border-right: none;
     border-bottom: 1px solid var(--divider);
     padding: 24px 0;
   }
+
   .category:last-child {
-    padding-left: 0;
     border-bottom: none;
-  }
-  .category:not(:first-child):not(:last-child) {
-    padding-left: 0;
   }
 }
 
@@ -116,7 +145,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--label-color);
-  margin: 0 0 20px 0;
+  margin-bottom: 16px;
 }
 
 /* ─── Chip List ──────────────────────────────────────────── */
@@ -125,7 +154,8 @@
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center; /* 🔥 center chips */
   gap: 10px;
 }
 
@@ -136,22 +166,15 @@
 }
 
 .chipInner {
-  position: relative;
   display: inline-block;
   padding: 7px 16px;
   font-size: 0.78rem;
-  font-family: 'DM Mono', 'Courier New', monospace;
   letter-spacing: 0.04em;
   color: var(--chip-text);
   background: var(--chip-bg);
   border: 1.5px solid var(--chip-border);
-  cursor: default;
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  /* Slightly clipped corner for a geometric feel */
+  transition: all 0.25s ease;
+
   clip-path: polygon(
     0 0,
     calc(100% - 8px) 0,
@@ -169,6 +192,14 @@
   box-shadow: 4px 4px 0 var(--chip-border);
 }
 
+/* Mobile chip size */
+@media (max-width: 480px) {
+  .chipInner {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+}
+
 /* ─── Marquee ────────────────────────────────────────────── */
 .marqueeTrack {
   margin-top: 56px;
@@ -180,6 +211,7 @@
 
 .marqueeContent {
   display: inline-flex;
+  min-width: max-content;
   animation: marquee 28s linear infinite;
 }
 
@@ -193,7 +225,13 @@
 
 .marqueeDiv {
   margin: 0 8px;
-  color: var(--marquee-text);
+}
+
+/* slower on mobile */
+@media (max-width: 480px) {
+  .marqueeContent {
+    animation-duration: 40s;
+  }
 }
 
 /* ─── Animations ─────────────────────────────────────────── */
