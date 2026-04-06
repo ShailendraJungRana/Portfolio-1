@@ -7,7 +7,7 @@ import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
 import linkedinDark from '../../assets/linkedin-dark.svg';
-import resume from '../../assets/Shailendra.pdf'
+import SJR from '../../assets/SJR.pdf'
 import { useTheme } from '../../common/ThemeContext';
 
 function Hero() {
@@ -53,7 +53,7 @@ function Hero() {
         <p className={styles.description}>
         A passionate aspiring DevOps engineer focused on learning and building scalable, automated, and efficient systems.
         </p>
-        <a href={resume} download>
+        <a href={SJR} download>
           <button className="hover">Resume</button>
         </a>
       </div>
