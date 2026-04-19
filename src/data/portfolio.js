@@ -66,30 +66,30 @@ export const PROJECTS = [
     desc: "Canary deployment system with automated rollback triggers. Reduced release risk by 85% and enabled 20+ deploys per day.",
     stack: ["GitHub Actions", "Kubernetes", "Istio", "Python", "Datadog"],
   },
-  {
-    num: "03", category: "OBSERVABILITY",
-    name: "Unified Monitoring Stack",
-    desc: "Full-stack observability: metrics, logs, traces, and alerting. Custom dashboards for 12 engineering teams with SLO tracking.",
-    stack: ["Prometheus", "Grafana", "Loki", "Tempo", "PagerDuty"],
-  },
-  {
-    num: "04", category: "COST OPTIMIZATION",
-    name: "Cloud FinOps Dashboard",
-    desc: "Real-time cloud cost visibility integrating AWS Cost Explorer and GCP Billing APIs. Identified $200K/yr in savings.",
-    stack: ["Python", "Terraform", "AWS", "Grafana", "BigQuery"],
-  },
-  {
-    num: "05", category: "SECURITY",
-    name: "DevSecOps Pipeline",
-    desc: "Security scanning integrated into every PR: SAST, DAST, dependency checks, and container image scanning with automated gating.",
-    stack: ["Trivy", "SonarQube", "OWASP ZAP", "GitHub Actions", "OPA"],
-  },
-  {
-    num: "06", category: "DISASTER RECOVERY",
-    name: "Automated DR Orchestrator",
-    desc: "Chaos engineering + automated disaster recovery. RPO < 15min, RTO < 30min tested monthly with zero manual intervention.",
-    stack: ["Chaos Monkey", "Terraform", "AWS Route53", "Python", "Ansible"],
-  },
+  // {
+  //   num: "03", category: "OBSERVABILITY",
+  //   name: "Unified Monitoring Stack",
+  //   desc: "Full-stack observability: metrics, logs, traces, and alerting. Custom dashboards for 12 engineering teams with SLO tracking.",
+  //   stack: ["Prometheus", "Grafana", "Loki", "Tempo", "PagerDuty"],
+  // },
+  // {
+  //   num: "04", category: "COST OPTIMIZATION",
+  //   name: "Cloud FinOps Dashboard",
+  //   desc: "Real-time cloud cost visibility integrating AWS Cost Explorer and GCP Billing APIs. Identified $200K/yr in savings.",
+  //   stack: ["Python", "Terraform", "AWS", "Grafana", "BigQuery"],
+  // },
+  // {
+  //   num: "05", category: "SECURITY",
+  //   name: "DevSecOps Pipeline",
+  //   desc: "Security scanning integrated into every PR: SAST, DAST, dependency checks, and container image scanning with automated gating.",
+  //   stack: ["Trivy", "SonarQube", "OWASP ZAP", "GitHub Actions", "OPA"],
+  // },
+  // {
+  //   num: "06", category: "DISASTER RECOVERY",
+  //   name: "Automated DR Orchestrator",
+  //   desc: "Chaos engineering + automated disaster recovery. RPO < 15min, RTO < 30min tested monthly with zero manual intervention.",
+  //   stack: ["Chaos Monkey", "Terraform", "AWS Route53", "Python", "Ansible"],
+  // },
 ];
 
 export const EDUCATION = [
