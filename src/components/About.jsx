@@ -1,4 +1,7 @@
-import  PROFILE  from "../assets/shailendra.jpg";
+// import  PROFILE  from "../assets/shailendra.jpg";
+// import  PROFILE  from "../assets/PP.png";
+// import  PROFILE  from "../assets/devops.png";
+import  PROFILE  from "../assets/arun.jpg";
 import resume from "../assets/SJR.pdf"
 
 // 👉 Replace this import with your actual profile image:
@@ -65,7 +68,7 @@ const css = `
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: middle;
+  object-position: top;
   display: block;
 }
 
