@@ -1,20 +1,43 @@
-import './App.css';
-import Contact from './sections/Contact/Contact';
-import Footer from './sections/Footer/Footer';
-import Hero from './sections/Hero/Hero';
-import Projects from './sections/Projects/Projects';
-import Skills from './sections/Skills/Skills';
+import { useEffect } from "react";
+import "./styles/globals.css";
 
-function App() {
+import Cursor   from "./components/Cursor";
+import Navbar   from "./components/Navbar";
+import Hero     from "./components/Hero";
+import About    from "./components/About";
+import Skills   from "./components/Skills";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Contact  from "./components/Contact";
+import Footer   from "./components/Footer";
+
+export default function App() {
+  // Global scroll-reveal for all .fade-up elements
+  useEffect(() => {
+    const els = document.querySelectorAll(".fade-up");
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+      { threshold: 0.08 }
+    );
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <>
-      <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
+      <Cursor />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Contact />
+      </main>
       <Footer />
     </>
   );
 }
-
-export default App;
